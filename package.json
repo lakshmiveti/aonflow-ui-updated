@@ -1,0 +1,82 @@
+{
+  "name": "reactui",
+  "version": "0.0.1",
+  "description": "AonFlow React UI",
+  "author": {
+    "name": "Lakshman Veti",
+    "url": "http://lakshman.net"
+  },
+  "homepage": ".",
+  "copyright": "Copyright 21-2022",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "@coreui/coreui": "^3.4.0",
+    "@coreui/icons": "^2.0.0-rc.0",
+    "@coreui/icons-react": "^1.0.2",
+    "@coreui/react": "^3.4.0",
+    "@coreui/utils": "^1.3.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.2",
+    "classnames": "^2.2.6",
+    "core-js": "^3.8.1",
+    "downloadjs": "^1.4.7",
+    "enzyme": "^3.11.0",
+    "file-saver": "^2.0.5",
+    "immutable": "^4.0.0-rc.12",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-app-polyfill": "^2.0.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-select": "^4.0.2",
+    "react-spinners": "^0.10.4",
+    "react-toastify": "^7.0.4",
+    "redux": "4.0.5",
+    "underscore": "^1.13.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.1",
+    "react-stepper-horizontal": "^1.0.11",
+    "web-vitals": "^1.1.2"
+  },
+  "devDependencies": {
+    "auto-changelog": "~2.2.1",
+    "react-scripts": "^4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:cov": "npm test -- --coverage --watchAll=false",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "eject": "react-scripts eject",
+    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/*index.js",
+      "!src/serviceWorker.js",
+      "!src/polyfill.js"
+    ]
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  }
+}
