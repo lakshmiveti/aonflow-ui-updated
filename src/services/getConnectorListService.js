@@ -1,3 +1,4 @@
+import config from "../config";
 const axios = require("axios");
 
 const getConnectorListService = async (token) => {
@@ -7,7 +8,7 @@ const getConnectorListService = async (token) => {
     "X-access-token": token,
   };
   await axios
-    .get("http://13.235.55.86/api/v1/connector/list", {
+    .get(`${config.apiUrl.node}/connector/list`, {
       headers,
     })
     .then(function (response) {

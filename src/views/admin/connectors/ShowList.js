@@ -11,6 +11,7 @@ import Overlay from "../../../aonComponents/overlay";
 import Button from "../../../aonComponents/Button";
 import deleteConnector from "../../../services/deleteConnectorService";
 import { useHistory } from "react-router-dom";
+import config from "../../../config";
 
 const ShowList = () => {
   const {
@@ -53,7 +54,7 @@ const ShowList = () => {
       }
       // setConnection(true);
       console.log("edit");
-      history.push("/connector/edit");
+      history.push("/connector/edit/"+id);
     }
   };
 
@@ -95,7 +96,7 @@ const ShowList = () => {
       return (
         <ConnectorLayout
           key={item.id}
-          logoUrl={`http://13.235.55.86/api/v1/file/fetch/${item.img}`}
+          logoUrl={`${config.apiUrl.node}/file/fetch/${item.img}`}
           handler={getConnector}
           connectionName={item.name}
           desc={item.desc}

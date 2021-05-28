@@ -1,6 +1,8 @@
 import React, { useContext, useRef, useState } from "react";
 import AonContext from "../../../../context/aonContext";
 import * as axios from "axios";
+import config from "../../../../config";
+
 
 function CloudComponent() {
   const { step1Data, updateStep1Data, jwtToken, setStep1Data } =
@@ -12,7 +14,7 @@ function CloudComponent() {
     desc: false,
   });
   const imgRef = useRef(null);
-  let uploadFileUrl = "http://13.235.55.86/api/v1/file";
+  let uploadFileUrl = `${config.apiUrl.node}/file`;
   const selectImage = (e) => {
     e.preventDefault();
     const selectedFiles = e.target.files;
@@ -34,7 +36,7 @@ function CloudComponent() {
         setStep1Data((prevState) => {
           return {
             ...prevState,
-            img: response.data.id,
+            img: imageId.toString(),
           };
         });
         console.log("Successfully set the image id", imageId);

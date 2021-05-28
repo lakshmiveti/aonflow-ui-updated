@@ -64,7 +64,7 @@ const TheSidebar = () => {
                   />
                 </svg>
               </span>
-              <Link to="/connector/list">List of Connectors</Link>
+              <Link to="/connector/list">Connector List</Link>
             </li>
             {/* <li><span>
                 <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

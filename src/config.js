@@ -6,10 +6,9 @@
 */
 
 var configuration = {
-    "appName": "GPO-Health-ReactUI",
+    "appName": "AONFLOW-ReactUI",
     "apiUrl": {
-        node: '/api/v1', 
-        //node: 'http://18.207.124.230:3000/api/v1',
+        node: 'http://13.235.55.86/api/v1',
     },
     "filesAutoRefresh": 5000, //ms
     "authType": "ads", //rest

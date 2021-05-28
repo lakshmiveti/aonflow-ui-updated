@@ -4,7 +4,7 @@ import Button from "../Button";
 function Body({ connectionName, desc, buttonTitle, buttonHandler, id }) {
   return (
     <div className="row px-3 template-content-section">
-      <div className="col-md-12  my-2">
+      <div className="col-md-12 ">
         <div className="heading">{connectionName}</div>
         <div className="description">{desc}</div>
       </div>

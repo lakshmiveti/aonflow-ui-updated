@@ -29,7 +29,7 @@ const routes = [
     component: NewConnector,
   },
   {
-    path: "/connector/edit",
+    path: "/connector/edit/:id",
     exact: true,
     name: "connector-edit",
     component: NewConnector,

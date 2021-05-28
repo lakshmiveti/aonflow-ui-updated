@@ -1,3 +1,4 @@
+import config from "../config";
 const axios = require("axios");
 
 const deleteConnector = async (id, token) => {
@@ -7,7 +8,7 @@ const deleteConnector = async (id, token) => {
     "X-access-token": token,
   };
   await axios
-    .delete(`http://13.235.55.86/api/v1/connector/delete/${id}`, {
+    .delete(`${config.apiUrl.node}/connector/delete/${id}`, {
       headers,
     })
     .then(function (response) {

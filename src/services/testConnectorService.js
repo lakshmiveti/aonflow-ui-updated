@@ -1,3 +1,4 @@
+import config from "../config";
 const axios = require("axios");
 
 const testConnectorService = async (data, token) => {
@@ -7,7 +8,7 @@ const testConnectorService = async (data, token) => {
     "X-access-token": token,
   };
   await axios
-    .post("http://13.235.55.86/api/v1/connector/test", data, {
+    .post(`${config.apiUrl.node}/connector/test`, data, {
       headers,
     })
     .then(function (response) {

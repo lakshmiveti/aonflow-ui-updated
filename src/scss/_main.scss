@@ -411,3 +411,12 @@ select {
 .big-text {
   font-weight: 100;
 }
+
+.img-fluid-parent{
+  height: 80px !important;
+  width: auto;
+  .img-fluid{
+    height: 100% !important;
+    width: auto !important;
+  }
+}

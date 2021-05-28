@@ -5,7 +5,7 @@ function Head({ logoUrl, handler, id }) {
   return (
     <div className="row">
       <div className="col-3">&nbsp;</div>
-      <div className="col-md-6 text-center my-2">
+      <div className="col-md-6 text-center my-2 img-fluid-parent">
         <img className="img-fluid logo-section" src={logoUrl} alt="brand" />
       </div>
       <div className="col-3 delete-btn-card">
