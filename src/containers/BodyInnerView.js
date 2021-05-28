@@ -1,19 +1,19 @@
-
 /**
  * Author: Lakshman Veti
  * Type: Component
  * Objective: To render body inner container
  * Associated Route/Usage: /connector/new
-*/
+ */
 
-import React from 'react'
+import React from "react";
 import { useHistory } from "react-router-dom";
 
-const BodyInnerView = ({ params })=> {
+const BodyInnerView = ({ params }) => {
   let history = useHistory();
   return (
     <>
-    <div className="back-page">
+      {params.comp}
+      {/* <div className="back-page">
       <img className="back-arrow" src="img/back-arrow.svg" alt="back arrow" onClick={history.goBack}/>
       <p className="selected-item">{params.heading}</p>
     </div>
@@ -31,9 +31,9 @@ const BodyInnerView = ({ params })=> {
               { params.comp }
         </div>
       </div>
-    </div>
+    </div> */}
     </>
-  )
-}
+  );
+};
 
-export default React.memo(BodyInnerView)
+export default React.memo(BodyInnerView);
