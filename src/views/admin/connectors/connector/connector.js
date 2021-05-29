@@ -1,17 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Layout from "../../../../aonComponents/layout";
 import Button from "../../../../aonComponents/Button";
 import NewConnector from "./newConnector";
 import AonContext from "../../../../context/aonContext";
 import addConnectorService from "../../../../services/addConnectorService";
-import getConnectorListService from "../../../../services/getConnectorListService";
+import getConnectorService from "../../../../services/getConnectorService";
 import testConnectorService from "../../../../services/testConnectorService";
 import updateConnector from "../../../../services/connectorUpdateService";
 import Overlay from "../../../../aonComponents/overlay";
 import ConnectorTest from "./connectorTest";
 import Loader from "./loader";
 import "./style.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function Connector() {
   const {
@@ -26,12 +26,58 @@ function Connector() {
     setConnection,
     resetStepData,
     isEdit,
+    setEdit,
     editRecord,
     customConfiguration,
+    setStep1Data,
+    setStep2Data,
+    setOauthData,
   } = useContext(AonContext);
 
   let history = useHistory();
   console.log("context", useContext(AonContext));
+  let { id } = useParams();
+
+  useEffect(() => {
+    async function getConnector(id) {
+      if (step1Data.name === "") {
+        setEdit(true);
+        const result = await getConnectorService(id, jwtToken);
+        console.log("result = ", result);
+
+        if (result.connector) {
+          const {
+            name,
+            img,
+            desc,
+            connectionName,
+            authenticationURL,
+            fetchDataURL,
+            authenticationType,
+            connectors,
+          } = result.connector;
+          setStep1Data({
+            name,
+            img,
+            desc,
+          });
+
+          setStep2Data({
+            connectionName,
+            authenticationURL,
+            fetchDataURL,
+            authenticationType,
+          });
+
+          if (authenticationType === "OAuth2") {
+            connectors[1].value = "";
+            setOauthData(connectors);
+          }
+        }
+      }
+    }
+    id && getConnector(id);
+  }, [id]);
 
   const [showOverlay, setShowOverlay] = useState(false);
   const [isLoading, setLoading] = useState(false);
