@@ -11,6 +11,7 @@ import AonContext from "../../../context/aonContext";
 import ShowList from "./ShowList";
 import tokenService from "../../../services/tokenService";
 import getConnectorListService from "../../../services/getConnectorListService";
+import '../../../scss/_main.scss'
 
 const List = () => {
   console.log("AonContext", useContext(AonContext));

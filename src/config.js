@@ -8,7 +8,7 @@
 var configuration = {
     "appName": "AONFLOW-ReactUI",
     "apiUrl": {
-        node: 'http://13.235.55.86/api/v1',
+        node: 'http://65.0.80.82:3000/api/v1',
     },
     "filesAutoRefresh": 5000, //ms
     "authType": "ads", //rest

@@ -4,7 +4,7 @@
  * Objective: To render Dashboard page
  * Associated Route/Usage: /dashboard
 */
-
+import '../../../scss/_main.scss'
 
 import React from 'react';
 
